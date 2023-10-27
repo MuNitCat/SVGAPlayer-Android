@@ -10,6 +10,8 @@ import com.opensource.svgaplayer.SVGASoundManager
 import com.opensource.svgaplayer.SVGAVideoEntity
 import com.opensource.svgaplayer.entities.SVGAVideoShapeEntity
 
+import android.text.TextUtils
+
 /**
  * Created by cuiminghui on 2017/3/29.
  */
@@ -266,8 +268,9 @@ internal class SVGACanvasDrawer(videoItem: SVGAVideoEntity, val dynamicItem: SVG
                     val textWidth = drawingTextPaint.measureText(drawingText)
                     val startX = drawRect.centerX() - textWidth / 2
 
+                    val ellipsizedText = TextUtils.ellipsize(drawingText, drawingTextPaint, drawRect.width().toFloat(), TextUtils.TruncateAt.END)
 
-                    textCanvas.drawText(drawingText, startX, baseLineY, drawingTextPaint);
+                    textCanvas.drawText(ellipsizedText.toString(), startX, baseLineY, drawingTextPaint);
                     drawTextCache.put(imageKey, textBitmap as Bitmap)
                 }
             }
