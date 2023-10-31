@@ -264,11 +264,16 @@ internal class SVGACanvasDrawer(videoItem: SVGAVideoEntity, val dynamicItem: SVG
                     val top = fontMetrics.top
                     val bottom = fontMetrics.bottom
                     // val baseLineY = drawRect.centerY() - top / 2 - bottom / 2
-                    val baseLineY = drawRect.centerY()
+                    
+                    val fontMetrics2 = textCanvas.fontMetrics
+                    val centerY = textCanvas.height / 2.toFloat()
+                    // val textHeight = fontMetrics2.descent - fontMetrics2.ascent
+                    val baselineY = centerY - (fontMetrics2.ascent + fontMetrics2.descent) / 2
+                    
                     // 计算居中的起始X坐标
-                    val textWidth = drawingTextPaint.measureText(drawingText)
-                    val startX = drawRect.centerX() - textWidth / 2
-                    // val ellipsizedText = TextUtils.ellipsize(drawingText, drawingTextPaint, drawRect.width().toFloat(), TextUtils.TruncateAt.END)
+                    // val textWidth = drawingTextPaint.measureText(drawingText)
+                    // val startX = drawRect.centerX() - textWidth / 2
+                    val startX = drawRect.centerX().toFloat()
 
                     textCanvas.drawText(drawingText, startX, baseLineY, drawingTextPaint);
                     drawTextCache.put(imageKey, textBitmap as Bitmap)
