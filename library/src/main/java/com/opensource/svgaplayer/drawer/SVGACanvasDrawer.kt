@@ -10,7 +10,6 @@ import com.opensource.svgaplayer.SVGASoundManager
 import com.opensource.svgaplayer.SVGAVideoEntity
 import com.opensource.svgaplayer.entities.SVGAVideoShapeEntity
 
-import android.text.TextUtils
 
 /**
  * Created by cuiminghui on 2017/3/29.
