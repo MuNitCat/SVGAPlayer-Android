@@ -268,7 +268,7 @@ internal class SVGACanvasDrawer(videoItem: SVGAVideoEntity, val dynamicItem: SVG
                     val fontMetrics2 = textCanvas.fontMetrics
                     val centerY = textCanvas.height / 2.toFloat()
                     // val textHeight = fontMetrics2.descent - fontMetrics2.ascent
-                    val baselineY = centerY - (fontMetrics2.ascent + fontMetrics2.descent) / 2
+                    val baseLineY = centerY - (fontMetrics2.ascent + fontMetrics2.descent) / 2
                     
                     // 计算居中的起始X坐标
                     // val textWidth = drawingTextPaint.measureText(drawingText)
